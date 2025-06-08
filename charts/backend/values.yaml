@@ -1,0 +1,21 @@
+replicaCount: 1
+
+image:
+  repository: syuhei0519/runote-app
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8000
+
+ingress:
+  enabled: true
+  className: nginx
+  annotations: {}
+  hosts:
+    - host: backend.local
+      paths:
+        - path: /
+          pathType: Prefix
+  tls: []

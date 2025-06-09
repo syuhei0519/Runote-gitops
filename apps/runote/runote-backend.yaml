@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: runote-backend
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/syuhei0519/Runote-gitops
+    targetRevision: master
+    path: charts/backend
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: runote
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true

@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: runote
+  name: runote-frontend
   namespace: argocd
 spec:
   project: default
   source:
-    repoURL: https://github.com/YOUR_NAME/runote-gitops
-    targetRevision: HEAD
-    path: charts
+    repoURL: https://github.com/syuhei0519/Runote-gitops
+    targetRevision: master
+    path: charts/frontend
   destination:
     server: https://kubernetes.default.svc
     namespace: runote

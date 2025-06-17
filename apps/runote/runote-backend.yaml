@@ -7,15 +7,15 @@ spec:
   project: default
   source:
     repoURL: https://github.com/syuhei0519/runote-gitops
-    targetRevision: HEAD
-    path: apps/runote-backend
+    targetRevision: master
+    path: charts/frontend
     helm:
       parameters:
         - name: fullnameOverride
           value: runote-backend
   destination:
     server: https://kubernetes.default.svc
-    namespace: runote
+    namespace: default
   syncPolicy:
     automated:
       prune: true

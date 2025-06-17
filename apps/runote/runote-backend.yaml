@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: runote-backend
-  namespace: argocd
+  namespace: default
 spec:
   project: default
   source:
@@ -11,7 +11,7 @@ spec:
     path: charts/backend
   destination:
     server: https://kubernetes.default.svc
-    namespace: runote
+    namespace: default
   syncPolicy:
     automated:
       selfHeal: true

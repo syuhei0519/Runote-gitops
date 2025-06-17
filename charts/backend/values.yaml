@@ -1,6 +1,5 @@
-replicaCount: 1
-
 fullnameOverride: runote-backend
+replicaCount: 1
 
 image:
   repository: syuhei0519/runote-app
@@ -26,12 +25,12 @@ env:
     DB_PORT: "3306"
     DB_DATABASE: "runote"
     VITE_APP_NAME: "Laravel"
-  secretRefName: "runote-backend-secrets"  # SealedSecretが生成する Secret名
+  secretRefName: "runote-backend-secrets"
 
 ingress:
   enabled: true
   className: nginx
-  host: runote.local     # ← ローカル用ドメインなど
+  host: runote.local
   tls: false
   tlsSecret: runote-backend-tls
   annotations:

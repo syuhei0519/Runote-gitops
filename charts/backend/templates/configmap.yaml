@@ -4,6 +4,6 @@ metadata:
   name: {{ include "runote-backend.fullname" . }}-config
   namespace: default
 data:
-{{- range $key, $value := .Values.env.config }}
-  {{ $key }}: "{{ $value }}"
+{{- range $key, $val := .Values.env.config }}
+  {{ $key }}: "{{ $val }}"
 {{- end }}

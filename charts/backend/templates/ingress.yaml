@@ -5,9 +5,7 @@ metadata:
   name: {{ include "runote-backend.fullname" . }}
   namespace: default
   annotations:
-    {{- with .Values.ingress.annotations }}
-    {{- toYaml . | nindent 4 }}
-    {{- end }}
+{{ toYaml .Values.ingress.annotations | indent 4 }}
 spec:
   ingressClassName: {{ .Values.ingress.className }}
   rules:

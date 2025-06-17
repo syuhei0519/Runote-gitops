@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/syuhei0519/runote-gitops
     targetRevision: master
-    path: charts/frontend
+    path: charts/backend
     helm:
       parameters:
         - name: fullnameOverride

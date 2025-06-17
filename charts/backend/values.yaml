@@ -1,5 +1,7 @@
 replicaCount: 1
 
+fullnameOverride: runote-backend
+
 image:
   repository: syuhei0519/runote-app
   tag: latest
